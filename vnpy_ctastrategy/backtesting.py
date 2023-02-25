@@ -195,7 +195,7 @@ class BacktestingEngine:
             progress += progress_days / total_days
             progress = min(progress, 1)
 
-            start = end + interval_delta
+            start = end + timedelta(milliseconds=1) #interval_delta
             end += progress_delta
 
         self.output(f"历史数据加载完成，数据量：{len(self.history_data)}")
